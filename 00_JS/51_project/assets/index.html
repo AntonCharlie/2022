@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Snake Game</title>
+	<script type="text/javascript" src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+
+        $(document).ready(function() {
+  
+			$("#tombol").click(function() {
+				$("#pertama").remove();
+				$("#kedua").remove();
+				// $("#ketiga").remove();
+				$("#tombol").remove();
+			});
+		})
+	</script>
+</head>
+<body>
+	<header>
+		<h1 id="pertama">Gunakan tombol arrow kiri, kanan, atas, dan bawah untuk bergerak</h1>
+		<h1 id="kedua">Ketika kamu sudah lelah, pergilah ke garis biru dan buang semua sampahmu</h1>
+		<!-- <h1 id="ketiga">Totalnya ada 20 sampah yang harus kamu kumpulkan</h1> -->
+		<button id="tombol" style="height: 50px;width: 100px;">Mengerti!</button>
+	</header>
+	
+	<div class="container">
+		<canvas id="canvas" width="500px" height="500px"></canvas>
+	</div>
+	<script type="text/javascript">
+		alert("Ayo bantu ibu mengumpulkan bungkus makananmu untuk membersihkan kamar")
+		alert("Kamu adalah ular dan bungkus makanan adalah lingkaran berwarna hijau")
+	</script>
+	</img>
+</body>
+</html>

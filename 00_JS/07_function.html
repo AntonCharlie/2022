@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Function Javascript</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var ourFirstFunction = function() {
+			console.log("This is my first function");
+		}
+
+		ourFirstFunction();
+
+		var printingMultipleTimes = function(howManyTimes, whatToPrint) {
+			for (var i = 0; i < howManyTimes; i++) {
+				console.log(i+" "+whatToPrint);
+			}
+		}
+		printingMultipleTimes(10, "I love mom...")
+
+
+		function double(number) {
+			return number * 2;
+		}
+
+		var double5 = double(5);
+
+		function getMedals(points) {
+			if (points < 3) { 
+				return"bronze";
+			} else if (points < 7) {
+				return"silver";
+			}
+			return "gold";
+		}
+		console.log(getMedals(4));
+
+
+	</script>
+
+</body>
+</html>

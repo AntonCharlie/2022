@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Find the buried treasure</title>
+</head>
+<body>
+	<h1>Find the buried treasure</h1>
+	<img src="https://news.vcgamers.com/wp-content/uploads/2022/01/map-ml-sanctum-island-3.jpg" height="400px" width="600px">
+	<p id="message">
+		
+	</p>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+		console.log(`x : ${$('img').position().left}, y : ${$('img').position().top}`)
+
+		function getRandomNumber(init_position, size) {
+			return Math.floor(Math.random() * size) + init_position;
+		}
+
+		function getDistance(event, target) {
+			let dx = event.offsetX - target.x;
+			let dy = event.offsetY - target.y;
+
+			return Math.sqrt( (dx*dx) + (dy*dy));
+		}
+
+		function getMessage(distance) {
+
+			if (distance < 10) {
+				return "Dikit Lagi";
+			} else if (distance < 20) {
+				return "Lah Nak Sampe";
+			} else if (distance < 40) {
+				return "Deket";
+			} else if (distance < 80) {
+				return "Maseh Jauh";
+			} else if (distance < 160) {
+				return "Jauh";
+			} else if (distance < 320) {
+				return "Jauh Nian";
+			} else {
+				return "Nak Kemano Kau";
+			}
+		}
+		let sisanyawa = 50;
+
+		let width = 600;
+		let height = 400;
+		let target = {
+			x : getRandomNumber($('img').position().left, width),
+			y : getRandomNumber($('img').position().top, height)
+		}
+
+		$('img').click( function  (event) {
+			sisanyawa -= 1;
+			if (sisanyawa == 0) {
+				alert(`cak itu be dak biso`)
+			}
+			console.log(sisanyawa);
+			
+			let distance = getDistance(event, target);
+			let message = getMessage(distance);
+			
+			$(`#message`).text(message);
+			
+
+			if (distance < 5) {
+				alert(`Nahh.. itu pacak, ez kan`);
+			}
+		})
+
+	</script>
+</body>
+</html>

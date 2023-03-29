@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Basic 2</title>
+</head>
+<body>
+	<canvas width="400" height="400" id="canvas" style="background-color: grey;"></canvas>
+	<script type="text/javascript">
+		let canvas = document.getElementById("canvas");
+		let ctx = canvas.getContext("2d");
+
+		ctx.fillStyle = "Black";
+		ctx.fillRect(0, 0, 20, 20)
+		for (let x = 20; x <= 400; x += 20){
+			ctx.fillRect(x, x, 20, 20);
+		}
+	</script>
+</body>
+</html>

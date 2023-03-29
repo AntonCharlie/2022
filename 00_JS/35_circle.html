@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Drawing Circle</title>
+</head>
+<body>
+	<canvas id="canvas" width="400" height="400"></canvas>
+	<script type="text/javascript">
+		let canvas = document.getElementById("canvas");
+		let ctx = canvas.getContext("2d");
+
+		ctx.strokeStyle = "Blue";
+		ctx.fillStyle = "Blue";
+		ctx.lineWidth = 5;
+
+		// ctx.beginPath();
+		// ctx.arc(200, 200, 50, 0, 2*Math.PI, false); // false = tidak searah jarum jam
+		// ctx.stroke();
+		// ctx.fill();
+
+		function circle(x, y, radius, start, end, mode, width = 10, color = "Blue", stroke  = "Black"){
+			ctx.strokeStyle = stroke;
+			ctx.fillStyle = color;
+			ctx.lineWidth = width;
+
+			ctx.beginPath();
+			ctx.arc(x, y, radius, start, end, mode);
+			ctx.stroke();
+			ctx.fill();
+		}
+		circle(200, 200, 50, 0, 2*Math.PI, false)
+
+	</script>
+</body>
+</html>

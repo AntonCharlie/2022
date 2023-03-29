@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Buat Kamu Nih</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+		let xPos = 100;
+		let move = () => {
+			$('#tidak').offset({left : xPos});
+			xPos+=265;
+
+			if (xPos > 600) {
+				xPos = 100;
+			}
+		}
+		setInterval(move, 200);
+
+		function harusIya(event) {
+			$('#iya').offset({left : event.pageX, top : event.pageY});
+			alert("beneran nih ><");
+			alert("makasih");
+			alert("i love you ><");
+		}
+		$('html').click(harusIya);
+		
+		
+		
+	</script>
+</head>
+<body>
+	<h1>Gue mau ngomong</h1>
+	<h2>
+		<img src="https://dl.kaskus.id/2.bp.blogspot.com/_LWTIJjQdNqI/Stni7v-kKNI/AAAAAAAAABY/UVqZqzUq6Tw/S660/597~Patrick-Star-Posters.jpg" height="200px" width="200px">
+	</h2>
+	<h3>
+		Mau gak jadi pacar gue ?
+	</h3>
+	<h4>
+		<button id="iya" >Mau</button>
+		<button id="tidak">Engga</button>
+	</h4>
+
+</body>
+</html>

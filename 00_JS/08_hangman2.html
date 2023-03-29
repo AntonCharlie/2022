@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Hangman 2</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		var words = [
+		"kelinci",
+		"tikus",
+		"kucing",
+		"babi",
+		"kancil"
+		];
+
+		function pickRandomWord() {
+			return words[Math.floor(Math.random()*words.length)]
+		}
+
+		function setUpAnsArr(word) {
+			var tempArr = [];
+
+			for (var i = 0; i < word.length; i++) {
+				tempArr[i] = "_";
+			}
+			return tempArr;
+		}
+
+		function showPlayerProgress(ansArr) {
+			//body
+			
+		}
+
+		function getGuess(argument) {
+			//body
+		}
+
+		function updateGameStates(guess, word, ansArr) {
+			//body
+		}
+
+		
+
+
+		var word = pickRandomWord();
+		var ansArr = setUpAnsArr(word)
+		var remainingLetters = word.length
+
+		while (remainingLetters > 0) {
+			showPlayerProgress(ansArr);
+
+			var guess = getGuess();
+			if (guess == null) {
+				break;
+			} else if (guess.length !== 1) {
+				alert("Please enter a single letter");
+			} else {
+				var correctGuess = updateGameStates(guess, word, ansArr);
+				remainingLetters -= correctGuess;
+			}
+		}
+
+		function showAnswerAndCongrats(ansArr) {
+			
+		}
+
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Drawing Circle</title>
+</head>
+<body>
+	<canvas id="canvas" width="800" height="800" style="background-color: grey;"></canvas>
+	<script type="text/javascript">
+		let canvas = document.getElementById("canvas");
+		let ctx = canvas.getContext("2d");
+
+		let circle = function (x, y, radius, color, isFilled) {
+			ctx.strokeStyle = color;
+			ctx.beginPath();
+			ctx.arc(x, y, radius, 0, 2*Math.PI, false);
+			ctx.closePath();
+			ctx.stroke();
+			if (isFilled) {
+				ctx.fillStyle = color;
+				ctx.fill();
+			}
+		}
+
+		let snowMan = function (x, y, color) {
+			let head = circle(x, y, 50, color, true);
+			let leftEye  = circle(x-20, y-20, 10, "Black", true);
+			let rightEye = circle(x+20, y-10, 10, "Black", true);
+			let nose = circle(x, y-10, 5, "White", true);
+
+			//mouth
+			ctx.beginPath();
+			ctx.arc(x, y+150, 100, color, true);
+			ctx.closePath();
+			ctx.stroke();
+			ctx.fill();
+
+			let body = circle(x, y+150, 100, color, true);		
+		}
+
+		snowMan(500, 200, "Red");
+
+		// 1. Buat function drawSnowMan(x, y, color); --> head (circle), body (circle)
+		// 2. Buat function drawhangMan(x, y, color); --> head(circle), hand (line), body (line), leg(line)
+		
+
+	</script>
+</body>
+</html>
